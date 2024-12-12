@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Mayank Gupta">
-    <title>Nexcent Landing page</title>
+    <title>Nexcent Landing Page</title>
     <link rel="stylesheet" href="../css/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <script src="../js/app.js"></script>
     <script src="../js/toddle.js"></script>
-  </head>
-  <body>
-    <body>
-        <nav class="nav">
-            <div class="container nav_container">
-              <img src="../assets/images/Logo.png" alt="Nexcent">
-              <ul class="nav_list desktop_nav">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav_container">
+            <img src="../assets/images/Logo.png" alt="Nexcent">
+            <ul class="nav_list desktop_nav">
                 <li class="nav_item"><a href="#Home" class="nav_link">Home</a></li>
                 <li class="nav_item"><a href="#Service" class="nav_link">Service</a></li>
                 <li class="nav_item"><a href="#Features" class="nav_link">Features</a></li>
                 <li class="nav_item"><a href="#Product" class="nav_link">Product</a></li>
                 <li class="nav_item"><a href="#Testimonial" class="nav_link">Testimonial</a></li>
-                <li class="nav_item"><a href="#" class="nav_btn">Sign up</a></li>
-              </ul>
-              <div id="nav_burger" class="nav_burger">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-            <ul id="mobile_nav_list" class="mobile_nav_list">
-              <li class="mobile_nav_item"><a href="#" class="mobile_nav_link">Home</a></li>
-              <li class="mobile_nav_item"><a href="#" class="mobile_nav_link">Features</a></li>
-              <li class="mobile_nav_item"><a href="#" class="mobile_nav_link">Community</a></li>
-              <li class="mobile_nav_item"><a href="#" class="mobile_nav_link">Blog</a></li>
-              <li class="mobile_nav_item mobile_nav_item_last"><a href="#" class="mobile_nav_link">Pricing</a></li>
-              <li class="mobile_nav_item"><a href="#" class="mobile_nav_btn nav_btn">Register Now</a></li>
+                <li class="nav_item">
+                  <button id="openModalBtn" class="btn">Sign up</button>
             </ul>
-          </nav>
-          
+            <div id="nav_burger" class="nav_burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul id="mobile_nav_list" class="mobile_nav_list">
+          <li class="mobile_nav_item"><a href="#" class="mobile_nav_link">Home</a></li>
+          <li class="mobile_nav_item"><a href="#" class="mobile_nav_link">Features</a></li>
+          <li class="mobile_nav_item"><a href="#" class="mobile_nav_link">Community</a></li>
+          <li class="mobile_nav_item"><a href="#" class="mobile_nav_link">Blog</a></li>
+          <li class="mobile_nav_item mobile_nav_item_last"><a href="#" class="mobile_nav_link">Pricing</a></li>
+          <li class="mobile_nav_item">
+              <button 
+                  type="button" 
+                  id="registerNowBtn" 
+                  class="mobile_nav_btn nav_btn btn btn-info" 
+              >
+                  Register Now
+              </button>
+          </li>
+      </ul>
+      
+      <div id="myModal" class="modal">
+          <div class="modal-content">
+              <span class="close" id="closeModal">&times;</span>
+              <div class="modal-header">Notice</div>
+              <div class="modal-body">Service Not Available.</div>
+              <button id="closeBtn" class="btn">Close</button>
+          </div>
+      </div>
+      
+    </nav>
+   
         <section id="Home"></section>
         <header class="header">
           <div class="container header_container">
@@ -68,15 +87,15 @@
           </div>
         </header>
     <main>
-      <section class="section">
-        <div class="container clients_container" id="Service">
+      <section class="section" id="Service">
+        <div class="container clients_container" >
           <div class="section_header">
             <h2 class="section_title">Our Clients</h2>
             <p class="section_text">
               We Have Been Working With Some Fortune 500+ Clients.
             </p>
           </div>
-          <div class="clients_wrapper">
+          <div class="clients_wrapper" class="animate-on-scroll" data-animation="animate-slide">
             <span>
               <img src="../assets/images/Logo-1.png" alt="Client 1 Logo" class="client_logo" />
             </span>
@@ -140,10 +159,10 @@
           </div>
         </div>
       </section>
-      <section class="section">
-        <div class="container experience_container" id="Features">
-          <div class="experience_image">
-            <img src="../assets/images/Frame 35.png" alt="" />
+      <section class="section" id="Features">
+        <div class="container experience_container" >
+          <div  class="experience_image">
+            <img id="exp_img" src="../assets/images/Frame 35.png" alt="" />
           </div>
           <div class="expericen_text">
             <h3 class="experience_title">
@@ -203,10 +222,10 @@
           </div>
         </div>
       </section>
-      <section class="section">
-        <div class="container experience_container" id="Product">
-          <div class="experience_image">
-            <img src="../assets/images/pana.png" alt="" />
+      <section class="section" id="Product">
+        <div class="container experience_container" >
+          <div class="experience_image" >
+            <img  id="help_img" src="../assets/images/pana.png" alt="" />
           </div>
           <div class="expericen_text" >
             <h3 class="experience_title">
@@ -245,7 +264,7 @@
                 <img src="../assets/images/Logo-3.png" alt="" class="test_logo" />
                 <img src="../assets/images/Logo-4.png" alt="" class="test_logo" />
                 <img src="../assets/images/Logo-5.png" alt="" class="test_logo" />
-                <a href="#" class="test_link">Meet all customers &rarr; </a>
+                
               </div>
             </div>
           </div>
@@ -305,8 +324,8 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="cotainer footer_container" id="Testimonial">
+    <footer class="footer" id="Testimonial">
+      <div class="cotainer footer_container" >
         <div class="footer_items">
             <img src="../assets/images/Icon205.png" alt="Nexcent">
           <a href="#" class="footer_logo">Nexcent</a>
@@ -371,6 +390,21 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> 
+    <div id="signupModal" class="modal" onclick="abc($event)">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Service not available.</p>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close" id="closeModal">&times;</span>
+          <div class="modal-header">Notice</div>
+          <div class="modal-body">Service Not Available.</div>
+          <button id="closeBtn" class="btn">Close</button>
+      </div>
+  </div>
   </body>
+</html>
 </html>
